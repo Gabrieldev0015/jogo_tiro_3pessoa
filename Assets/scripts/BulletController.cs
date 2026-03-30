@@ -17,4 +17,4 @@ public class BulletController : MonoBehaviour
         transform.Translate(0f, 0f, speed * Time.deltaTime);
 
     }
-}
+} 
