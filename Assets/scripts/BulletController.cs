@@ -17,4 +17,16 @@ public class BulletController : MonoBehaviour
         transform.Translate(0f, 0f, speed * Time.deltaTime);
 
     }
+
+    private void OnCollisionEnter(Collision col) // quando a bala encosta num objeto; guarda dados da colisão
+    {
+        Debug.Log(col.gameObject.GetComponent<Transform>().name); //comentario quando acertar o inimigo
+
+        if (col.gameObject.CompareTag("Enemy")) //col pegou de game object o inimigo em tag
+        {
+            Destroy(col.gameObject); //destruindo inimigo pelo comando destroy
+        }
+        Destroy(gameObject);
+    }
+
 } 
